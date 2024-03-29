@@ -1,10 +1,10 @@
-# 湖师-校园网-认证
-> 由于实验室有服务器，因为没有装图形化界面的缘故，导致连接校园网困难，故开发此项目
+# HBNU Campus Authentication
+> Due to the lab's servers not having a graphical interface installed, connection to campus network has been challenging, hence the development of this project.
 
-## 使用
-1. 拷贝 .env.sample 文件，并重命名为 .env
-2. 填入自己的账户与密码
-3. 运行 `python auth.py`
+## Usage
+1. Copy `.env.sample` and rename it to `.env`
+2. Fill in your account and password
+3. Run `python auth.py`
 
-## 感谢
-* encrypt 文件中的 加密方法文件 并非本作者缩写，原作者找不到了。。。。
+## Credits
+* The encryption method file in the `encrypt` directory is not abbreviated by the author, the original author cannot be found...
