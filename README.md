@@ -1,4 +1,7 @@
 # HBNU Campus Authentication
+
+EN | [中文](README_CN.md)
+
 > Due to the lab's servers not having a graphical interface installed, connection to campus network has been challenging, hence the development of this project.
 
 ## Usage
