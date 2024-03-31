@@ -5,7 +5,7 @@ _VERSION = "1.0"
 
 def _getbyte(s, i):
     x = ord(s[i])
-    if (x > 255):
+    if x > 255:
         print("INVALID_CHARACTER_ERR: DOM Exception 5")
         exit(0)
     return x
@@ -19,7 +19,7 @@ def get_base64(s):
     if len(s) == 0:
         return s
     for i in range(0, imax, 3):
-        b10 = (_getbyte(s, i) << 16) | (_getbyte(s, i + 1) << 8) | _getbyte(s, i + 2);
+        b10 = (_getbyte(s, i) << 16) | (_getbyte(s, i + 1) << 8) | _getbyte(s, i + 2)
         x.append(_ALPHA[(b10 >> 18)])
         x.append(_ALPHA[((b10 >> 12) & 63)])
         x.append(_ALPHA[((b10 >> 6) & 63)])
