@@ -10,8 +10,8 @@ from typing import Dict
 import requests
 from dotenv import load_dotenv
 
-from encrypt.base64 import get_base64
-from encrypt.xencode import get_xencode
+from utils.base64 import get_base64
+from utils.xencode import get_xencode
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s: %(message)s', level=logging.INFO)
 
