@@ -70,9 +70,14 @@ class CampusNetwork:
                                     params=get_challenge_params)
             response.raise_for_status()
             return analysis_jsonp(response)['challenge']
+        except requests.HTTPError as e:
+            logging.error(f'Failed to get token: {e}')
+            sys.exit()
         except requests.RequestException as e:
             logging.error(f'Failed to get token: {e}')
             sys.exit()
+        except KeyError as e:
+            logging.error(f'Response parsing error, missing key: {e}')
 
     @staticmethod
     def switch_id(ip_address: str) -> (str, str):
@@ -120,11 +125,11 @@ class CampusNetwork:
         }
         i = "{SRBX1}" + get_base64(get_xencode(json.dumps(info), token))
         logging.info("i : " + i)
-        logging.info("成功加密数据")
+        logging.info("Data encryption completed successfully.")
         return i, hmd5, token
 
     @staticmethod
-    def login(self, headers, url_srun_portal, username, ip, ac_id, i, hmd5, chksum, n, category, operate_system, name,
+    def login(headers, url_srun_portal, username, ip, ac_id, i, hmd5, chksum, n, category, operate_system, name,
               callback):
         try:
             srun_portal_params = {
